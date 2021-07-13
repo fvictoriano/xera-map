@@ -10,9 +10,9 @@ var map = L.map('mapid', {
     zoomSnap: 0.1,
 });
 
-map.on('click',function(e) {
-    alert(e.latlng);
-});
+// map.on('click',function(e) {
+//     alert(e.latlng);
+// });
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
