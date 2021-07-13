@@ -1,5 +1,3 @@
-//FYXEL TEST 
-
 var bounds = [[0,0], [2000,2000]];
 
 var map = L.map('mapid', {
@@ -11,6 +9,10 @@ var map = L.map('mapid', {
     minZoom: -1,
     zoomSnap: 0.1,
     cursor: true
+});
+
+map.on('click',function(e) {
+    alert(e.latlng);
 });
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
