@@ -1,3 +1,5 @@
+//FYXEL TEST 
+
 var bounds = [[0,0], [2000,2000]];
 
 var map = L.map('mapid', {
@@ -6,7 +8,7 @@ var map = L.map('mapid', {
     maxBoundsViscosity: 1.0,
     zoomControl: false,
     attributionControl: false,
-    minZoom: -2,
+    minZoom: -1,
     zoomSnap: 0.1,
     cursor: true
 });
