@@ -52,6 +52,8 @@ L.marker([758.376691, 860], {icon: gasIcon}).addTo(gas);
 L.marker([644.414492, 1236], {icon: gasIcon}).addTo(gas);
 L.marker([432.48479, 704], {icon: gasIcon}).addTo(gas);
 L.marker([306.526571, 1166], {icon: gasIcon}).addTo(gas);
+L.marker([422.495401, 692], {icon: gasIcon}).addTo(gas);
+L.marker([618.423114, 344], {icon: gasIcon}).addTo(gas);
 
 
 
