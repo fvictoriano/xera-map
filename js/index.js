@@ -73,6 +73,19 @@ L.marker([1338, 1446], {icon: carIcon}).addTo(cars)
 L.marker([965, 1003], {icon: carIcon}).addTo(cars)
 L.marker([453, 967], {icon: carIcon}).addTo(cars)
 
+L.marker([912.325625, 1480], {icon: gasIcon}).addTo(gas);
+L.marker([1432.153196, 1130], {icon: gasIcon}).addTo(gas);
+L.marker([758.376691, 860], {icon: gasIcon}).addTo(gas);
+L.marker([644.414492, 1236], {icon: gasIcon}).addTo(gas);
+L.marker([432.48479, 704], {icon: gasIcon}).addTo(gas);
+L.marker([306.526571, 1166], {icon: gasIcon}).addTo(gas);
+L.marker([618.423114, 344], {icon: gasIcon}).addTo(gas);
+L.marker([1480.049405, 407.417664], {icon: gasIcon}).addTo(gas);
+L.marker([618.423114, 344], {icon: gasIcon}).addTo(gas);
+L.marker([1264.361492, 288.307194], {icon: gasIcon}).addTo(gas);
+
+
+
 
 
 //control map
