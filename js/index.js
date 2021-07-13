@@ -11,9 +11,9 @@ var map = L.map('mapid', {
     cursor: true
 });
 
-map.on('click',function(e) {
-    alert(e.latlng);
-});
+// map.on('click',function(e) {
+//     alert(e.latlng);
+// });
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
@@ -92,16 +92,5 @@ L.marker([695, 243], {icon: radioactiveIcon}).addTo(radioactives);
 
 //control map
 L.control.layers(null, overlays).addTo(map);
-
-//icons
-
-
-
-
-
-
-//map.on('click',function(e) {
-//    alert(e.latlng);
-//});
 
 
