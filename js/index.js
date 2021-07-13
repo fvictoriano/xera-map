@@ -11,9 +11,9 @@ var map = L.map('mapid', {
     cursor: true
 });
 
-// map.on('click',function(e) {
-//     alert(e.latlng);
-// });
+map.on('click',function(e) {
+    alert(e.latlng);
+});
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
@@ -21,15 +21,16 @@ map.fitBounds(bounds)
 //groups
 var cars = L.layerGroup().addTo(map);
 var atv = L.layerGroup().addTo(map);
-var radioactives = L.layerGroup().addTo(map);
+var reactors = L.layerGroup().addTo(map);
 var gas = L.layerGroup().addTo(map);
+var compounds = L.layerGroup().addTo(map);
 
 var overlays = {
     "Cars": cars,
     "ATVs": atv,
-    "Reactors": radioactives,
+    "Reactors": reactors,
     "Gas Stations": gas,
-    
+    "Compounds": compounds,
 }
 
 //icons
@@ -38,18 +39,26 @@ var carIcon = L.icon({
 iconUrl: 'img/icons/buggy.png',
 iconSize: [35, 35],  
  });
+
 var atvIcon = L.icon({
 iconUrl: 'img/icons/atv.png',
 iconSize: [25, 25],  
  });
-var radioactiveIcon = L.icon({
-iconUrl: 'img/icons/radioactive.png',
+
+var reactorIcon = L.icon({
+iconUrl: 'img/icons/reactor.png',
 iconSize: [20, 20],  
  });
+
 var gasIcon = L.icon({
 iconUrl: 'img/icons/gas.png',
 iconSize: [20, 20],  
- });    
+ });
+ 
+var fistIcon = L.icon({
+iconUrl: 'img/icons/fist.png',
+iconSize: [22, 22],  
+    });  
 
 //markers
 L.marker([578, 321], {icon: atvIcon}).addTo(atv)
@@ -84,10 +93,13 @@ L.marker([1258, 282], {icon: gasIcon}).addTo(gas);
 L.marker([1476, 397], {icon: gasIcon}).addTo(gas);
 L.marker([1332, 1445], {icon: gasIcon}).addTo(gas);
 
-L.marker([427, 1409], {icon: radioactiveIcon}).addTo(radioactives);
-L.marker([1002, 1780], {icon: radioactiveIcon}).addTo(radioactives);
-L.marker([695, 243], {icon: radioactiveIcon}).addTo(radioactives);
+L.marker([427, 1409], {icon: reactorIcon}).addTo(reactors);
+L.marker([1002, 1780], {icon: reactorIcon}).addTo(reactors);
+L.marker([695, 243], {icon: reactorIcon}).addTo(reactors);
 
+L.marker([237, 632], {icon: fistIcon}).addTo(compounds);
+L.marker([1189, 634], {icon: fistIcon}).addTo(compounds);
+L.marker([1656, 1033], {icon: fistIcon}).addTo(compounds);
 
 
 //control map
