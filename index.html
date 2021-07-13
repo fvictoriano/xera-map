@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Xera Map</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+         crossorigin=""/>
+        <script src="js/leaflet.js"></script>      
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body id="body">
+        <div id="mapid"></div>
+        <script>
+            var mapSW = [200, 8000];
+            var mapNE = [8000, 200];
+
+            var map = L.map('mapid').setView([0, 0], 1);
+
+            L.tileLayer('img/{z}/{x}/{y}.png', {
+                minZoom: 3,
+                maxZoom: 5,
+                noWrap: true,
+                crs: L.CRS.Simple,                                  
+            }).addTo(map);
+
+            map.setMaxBounds(new L.LatLngBounds(
+                map.unproject(mapSW, map.getMaxZoom()),
+                map.unproject(mapNE, map.getMaxZoom())
+            ));
+
+            var carIcon = L.icon({
+            iconUrl: 'img/icons/buggy.png',
+            iconSize: [35, 35],  
+             });
+            var atvIcon = L.icon({
+            iconUrl: 'img/icons/atv.png',
+            iconSize: [25, 25],  
+             }); 
+
+            //markers
+
+            var car1 = L.marker([-21.248422, 34.453125],{icon: carIcon}).addTo(map);
+            var car2 = L.marker([5.484768, 19.467773],{icon: carIcon}).addTo(map);
+            var car3 = L.marker([-2.943041, 0.439453],{icon: carIcon}).addTo(map);
+            var car4 = L.marker([0.483393, 3.867188],{icon: carIcon}).addTo(map);
+            var car5 = L.marker([-43.548548, -2.021484],{icon: carIcon}).addTo(map);
+            var car6 = L.marker([-43.866218, -13.227539],{icon: carIcon}).addTo(map);
+            var car7 = L.marker([24.607069, 40.473633],{icon: carIcon}).addTo(map);
+            var car8 = L.marker([5.484768, 19.467773],{icon: carIcon}).addTo(map);
+            var car9 = L.marker([5.484768, 19.467773],{icon: carIcon}).addTo(map);
+            var car10 = L.marker([5.484768, 19.467773],{icon: carIcon}).addTo(map);
+
+            var atv1 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+            var atv2 = L.marker([-21.534847, 29.223633],{icon: atvIcon}).addTo(map);
+            var atv3 = L.marker([-19.352611, 31.816406],{icon: atvIcon}).addTo(map);
+            var atv4 = L.marker([-45.151053, -13.007812],{icon: atvIcon}).addTo(map);
+            var atv5 = L.marker([35.85344, 40.297852],{icon: atvIcon}).addTo(map);
+            var atv6 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+            var atv7 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+            var atv8 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+            var atv9 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+            var atv10 = L.marker([19.062118,12.832031],{icon: atvIcon}).addTo(map);
+
+
+
+
+            //groups
+            var cars = L.layerGroup([car1,car2,car3,car4,car5,car6,car7]).addTo(map);
+            var atv = L.layerGroup([atv1,atv2,atv3,atv4,atv5,atv6,atv7]).addTo(map);
+
+            var overlays = {
+                "Cars": cars,
+                "ATV": atv,
+            }
+            //control map
+            L.control.layers(null, overlays).addTo(map);
+
+            //icons
+       
+
+           
+
+
+
+            map.on('click',function(e) {
+                alert(e.latlng);
+            });
+            
+
+
+        </script>
+
+        
+    </body>
+       
+
+</html>
