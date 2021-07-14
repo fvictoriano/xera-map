@@ -27,6 +27,7 @@ var reactors = L.layerGroup().addTo(map);
 var gas = L.layerGroup().addTo(map);
 var compounds = L.layerGroup().addTo(map);
 var helis = L.layerGroup().addTo(map);
+var bunkers = L.layerGroup().addTo(map);
 
 var overlays = {
     "Cities": cities,
@@ -38,6 +39,7 @@ var overlays = {
     "Compound Events": compounds,
     "Reactor Events": reactors,
     "Helicopter Crashes": helis,
+    "Bunker Events": bunkers,
 }
 
 //icons
@@ -69,6 +71,11 @@ var fistIcon = L.icon({
 
 var heliIcon = L.icon({
     iconUrl: 'img/icons/helicopter.png',
+    iconSize: [20, 20], 
+});
+
+var bunkerIcon = L.icon({
+    iconUrl: 'img/icons/bunker.png',
     iconSize: [20, 20], 
 });
 
@@ -114,7 +121,13 @@ L.marker([237, 632], {icon: fistIcon}).addTo(compounds);
 L.marker([1189, 634], {icon: fistIcon}).addTo(compounds);
 L.marker([1656, 1033], {icon: fistIcon}).addTo(compounds);
 
-L.marker([1419, 968], {icon: heliIcon}).addTo(helis);
+L.marker([1439, 1020], {icon: heliIcon}).addTo(helis);
+L.marker([257, 998], {icon: heliIcon}).addTo(helis);
+L.marker([472, 1722], {icon: heliIcon}).addTo(helis);
+
+L.marker([597, 534], {icon: bunkerIcon}).addTo(bunkers);
+L.marker([1816, 1372], {icon: bunkerIcon}).addTo(bunkers);
+L.marker([1254, 133], {icon: bunkerIcon}).addTo(bunkers);
 
 
 // AREA NAMES
