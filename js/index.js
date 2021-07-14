@@ -91,6 +91,7 @@ L.marker([445, 846], {icon: atvIcon}).addTo(atv)
 L.marker([788, 1347], {icon: atvIcon}).addTo(atv)
 L.marker([1430, 1439], {icon: atvIcon}).addTo(atv)
 L.marker([749, 1316], {icon: atvIcon}).addTo(atv)
+L.marker([1010, 446], {icon: atvIcon}).addTo(atv)
 
 L.marker([435, 846], {icon: carIcon}).addTo(cars)
 L.marker([767, 1377], {icon: carIcon}).addTo(cars)
@@ -112,6 +113,12 @@ L.marker([618, 344], {icon: gasIcon}).addTo(gas);
 L.marker([1258, 282], {icon: gasIcon}).addTo(gas);
 L.marker([1476, 397], {icon: gasIcon}).addTo(gas);
 L.marker([1332, 1445], {icon: gasIcon}).addTo(gas);
+L.marker([538, 888], {icon: gasIcon}).addTo(gas);
+L.marker([1046, 408], {icon: gasIcon}).addTo(gas);
+L.marker([1542, 216], {icon: gasIcon}).addTo(gas);
+L.marker([1406, 680], {icon: gasIcon}).addTo(gas);
+L.marker([1056, 975], {icon: gasIcon}).addTo(gas);
+L.marker([743, 1365], {icon: gasIcon}).addTo(gas);
 
 L.marker([427, 1409], {icon: reactorIcon}).addTo(reactors);
 L.marker([695, 243], {icon: reactorIcon}).addTo(reactors);
