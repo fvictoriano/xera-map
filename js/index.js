@@ -18,87 +18,60 @@ var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
 
 //groups
+var settlements = L.layerGroup().addTo(map);
+var military = L.layerGroup().addTo(map);
+var cities = L.layerGroup().addTo(map);
 var cars = L.layerGroup().addTo(map);
 var atv = L.layerGroup().addTo(map);
 var reactors = L.layerGroup().addTo(map);
 var gas = L.layerGroup().addTo(map);
 var compounds = L.layerGroup().addTo(map);
 var helis = L.layerGroup().addTo(map);
-var settlements = L.layerGroup().addTo(map);
-var military = L.layerGroup().addTo(map);
 
 var overlays = {
+    "Cities": cities,
+    "Settlements": settlements,
+    "Military": military,
     "Cars": cars,
     "ATVs": atv,
     "Gas Stations": gas,
     "Compound Events": compounds,
     "Reactor Events": reactors,
     "Helicopter Crashes": helis,
-    "Settlements": settlements,
-    "Military": military,
 }
 
 //icons
 
 var carIcon = L.icon({
-iconUrl: 'img/icons/buggy.png',
-iconSize: [35, 35],  
+    iconUrl: 'img/icons/buggy2.png',
+    iconSize: [28, 28],
 });
 
 var atvIcon = L.icon({
-iconUrl: 'img/icons/atv.png',
-iconSize: [25, 25],  
+    iconUrl: 'img/icons/atv2.png',
+    iconSize: [25, 25],  
 });
 
 var reactorIcon = L.icon({
-iconUrl: 'img/icons/reactor.png',
-iconSize: [20, 20],  
+    iconUrl: 'img/icons/reactor.png',
+    iconSize: [20, 20],  
 });
 
 var gasIcon = L.icon({
-iconUrl: 'img/icons/gas.png',
-iconSize: [20, 20],  
+    iconUrl: 'img/icons/gas2.png',
+    iconSize: [20, 20],  
 });
  
 var fistIcon = L.icon({
-iconUrl: 'img/icons/fist.png',
-iconSize: [22, 22],  
+    iconUrl: 'img/icons/fist.png',
+    iconSize: [20, 20],  
 });
 
 var heliIcon = L.icon({
     iconUrl: 'img/icons/helicopter.png',
-    iconSize: [22, 22], 
+    iconSize: [20, 20], 
 });
 
-var eastSettlementIcon = L.icon({
-    iconUrl: 'img/settlements/esettlement.png',
-    iconSize: [90, 16],
-});
-
-var northSettlementIcon = L.icon({
-    iconUrl: 'img/settlements/nsettlement.png',
-    iconSize: [95, 16],
-});
-
-var southSettlementIcon = L.icon({
-    iconUrl: 'img/settlements/ssettlement.png',
-    iconSize: [95, 16],
-});
-
-var airfieldIcon = L.icon({
-    iconUrl: 'img/military/airfield.png',
-    iconSize: [105, 16],
-});
-
-var milbaseIcon = L.icon({
-    iconUrl: 'img/military/milbase.png',
-    iconSize: [105, 16],
-});
-
-var prisonIcon = L.icon({
-    iconUrl: 'img/military/prison.png',
-    iconSize: [40, 16],
-});
 
 //markers
 L.marker([578, 321], {icon: atvIcon}).addTo(atv)
@@ -143,13 +116,83 @@ L.marker([1656, 1033], {icon: fistIcon}).addTo(compounds);
 
 L.marker([1419, 968], {icon: heliIcon}).addTo(helis);
 
-L.marker([1002, 1780], {icon: eastSettlementIcon}).addTo(settlements);
-L.marker([1763, 502], {icon: northSettlementIcon}).addTo(settlements);
-L.marker([178, 157], {icon: southSettlementIcon}).addTo(settlements);
 
-L.marker([520, 1828], {icon: airfieldIcon}).addTo(military);
-L.marker([1756, 1412], {icon: milbaseIcon}).addTo(military);
-L.marker([132, 1045], {icon: prisonIcon}).addTo(military);
+// AREA NAMES
+
+L.marker(
+    [1002, 1780], 
+    {icon: L.icon({ iconUrl: 'img/settlements/esettlement.png', iconSize: [115, 16] })}
+).addTo(settlements)
+
+L.marker(
+    [1763, 502], 
+    {icon: L.icon({ iconUrl: 'img/settlements/nsettlement.png', iconSize: [120, 16] })}
+).addTo(settlements)
+
+L.marker(
+    [178, 157], 
+    {icon: L.icon({ iconUrl: 'img/settlements/ssettlement.png', iconSize: [120, 16] })}
+).addTo(settlements)
+
+L.marker(
+    [520, 1828], 
+    {icon: L.icon({ iconUrl: 'img/military/airfield.png', iconSize: [130, 16] })}
+).addTo(military)
+
+L.marker(
+    [1756, 1412], 
+    {icon: L.icon({ iconUrl: 'img/military/milbase.png', iconSize: [130, 16] })}
+).addTo(military)
+
+L.marker(
+    [132, 1045], 
+    {icon: L.icon({ iconUrl: 'img/military/prison.png', iconSize: [50, 16] })}
+).addTo(military)
+
+L.marker(
+    [1046, 1051], 
+    {icon: L.icon({ iconUrl: 'img/cities/winchester.png', iconSize: [110, 16] })}
+).addTo(cities)
+
+L.marker(
+    [752, 1345], 
+    {icon: L.icon({ iconUrl: 'img/cities/arrowtown.png', iconSize: [80, 16] })}
+).addTo(cities)
+
+L.marker(
+    [975, 428], 
+    {icon: L.icon({ iconUrl: 'img/cities/bakersfield.png', iconSize: [80, 16] })}
+).addTo(cities)
+
+L.marker(
+    [1458, 712], 
+    {icon: L.icon({ iconUrl: 'img/cities/hedgewood.png', iconSize: [80, 16] })}
+).addTo(cities)
+
+L.marker(
+    [1562, 200], 
+    {icon: L.icon({ iconUrl: 'img/cities/henderson.png', iconSize: [80, 16] })}
+).addTo(cities)
+
+L.marker(
+    [492, 922], 
+    {icon: L.icon({ iconUrl: 'img/cities/melrose.png', iconSize: [67, 16] })}
+).addTo(cities)
+
+L.marker(
+    [1367, 1510], 
+    {icon: L.icon({ iconUrl: 'img/cities/mountainview.png', iconSize: [100, 16] })}
+).addTo(cities)
+
+L.marker(
+    [1150, 75], 
+    {icon: L.icon({ iconUrl: 'img/cities/port.png', iconSize: [35, 16] })}
+).addTo(cities)
+
+L.marker(
+    [521, 1145], 
+    {icon: L.icon({ iconUrl: 'img/cities/southernlakes.png', iconSize: [105, 16] })}
+).addTo(cities)
 
 //control map
 L.control.layers(null, overlays).addTo(map);
