@@ -122,6 +122,23 @@ L.marker([1338, 1446], {icon: carIcon}).addTo(cars)
 L.marker([965, 1003], {icon: carIcon}).addTo(cars)
 L.marker([453, 967], {icon: carIcon}).addTo(cars)
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+L.marker([912.325625, 1480], {icon: gasIcon}).addTo(gas);
+L.marker([1432.153196, 1130], {icon: gasIcon}).addTo(gas);
+L.marker([758.376691, 860], {icon: gasIcon}).addTo(gas);
+L.marker([644.414492, 1236], {icon: gasIcon}).addTo(gas);
+L.marker([432.48479, 704], {icon: gasIcon}).addTo(gas);
+L.marker([306.526571, 1166], {icon: gasIcon}).addTo(gas);
+L.marker([618.423114, 344], {icon: gasIcon}).addTo(gas);
+L.marker([1480.049405, 407.417664], {icon: gasIcon}).addTo(gas);
+L.marker([618.423114, 344], {icon: gasIcon}).addTo(gas);
+L.marker([1264.361492, 288.307194], {icon: gasIcon}).addTo(gas);
+L.marker([744.860429, 1367.020783], {icon: gasIcon}).addTo(gas);
+L.marker([539.902138, 885.349923], {icon: gasIcon}).addTo(gas);
+=======
+>>>>>>> Stashed changes
 L.marker([912, 1480], {icon: gasIcon}).addTo(gas);
 L.marker([1432, 1130], {icon: gasIcon}).addTo(gas);
 L.marker([758, 860], {icon: gasIcon}).addTo(gas);
@@ -136,6 +153,10 @@ L.marker([1332, 1445], {icon: gasIcon}).addTo(gas);
 L.marker([427, 1409], {icon: reactorIcon}).addTo(reactors);
 L.marker([695, 243], {icon: reactorIcon}).addTo(reactors);
 L.marker([1584, 1782], {icon: reactorIcon}).addTo(reactors);
+<<<<<<< Updated upstream
+=======
+>>>>>>> bef1e7ee0bd23a165365b011e6f1dade7c4cd32d
+>>>>>>> Stashed changes
 
 L.marker([237, 632], {icon: fistIcon}).addTo(compounds);
 L.marker([1189, 634], {icon: fistIcon}).addTo(compounds);
