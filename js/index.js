@@ -6,7 +6,7 @@ var map = L.map('mapid', {
     maxBoundsViscosity: 1.0,
     zoomControl: false,
     attributionControl: false,
-    minZoom: -1,
+    minZoom: -2,
     zoomSnap: 0.1,
 });
 
@@ -98,13 +98,13 @@ L.marker([788, 1347], {icon: atvIcon}).addTo(atv);
 L.marker([749, 1316], {icon: atvIcon}).addTo(atv);// arrow town left (confirmed)
 L.marker([1010, 446], {icon: atvIcon}).addTo(atv);
 L.marker([958, 1012], {icon: atvIcon}).addTo(atv);//center winchester (confirmed)
+L.marker([1389, 1424], {icon: atvIcon}).addTo(atv);
 
 L.marker([435, 846], {icon: carIcon}).addTo(cars);//melrose left (confirmed)
 L.marker([767, 1377], {icon: carIcon}).addTo(cars);//arrow town right (confirmed)
 L.marker([1013, 1035], {icon: carIcon}).addTo(cars);//center top winchester (confirmed)
 L.marker([1063, 1213], {icon: carIcon}).addTo(cars);//right winchester (confirmed)
 L.marker([1157, 931], {icon: carIcon}).addTo(cars);//top winchester (confirmed)
-//L.marker([1389, 1424], {icon: carIcon}).addTo(cars); not confirmed
 L.marker([1338, 1446], {icon: carIcon}).addTo(cars);//gas station on moutain view (confirmed)
 L.marker([453, 967], {icon: carIcon}).addTo(cars);
 L.marker([1421, 1439], {icon: carIcon}).addTo(cars);//moutain view north (confirmed)
@@ -200,7 +200,46 @@ createNametag("MOUNTAIN VIEW", [1367, 1510], "nametag grey", [-80, 25], cities)
 createNametag("PORT", [1150, 75], "nametag grey", [-45, 25], cities)
 createNametag("SOUTHERN LAKES", [521, 1145], "nametag grey", [-80, 25], cities)
 
-//control map
-L.control.layers(null, overlays).addTo(map);
+var layerControl = L.control.layers(null, overlays).addTo(map);
+
+var layersList = layerControl._section
+var btnContainer = document.createElement('div')
+btnContainer.className = "btn-container"
+
+var enableBtn = document.createElement('button')
+enableBtn.className = "layer-btn"
+enableBtn.appendChild(document.createTextNode("Enable All"))
+enableBtn.addEventListener("click", _ => {
+    inputs = layerControl._layerControlInputs
+    for (i = 0; i < inputs.length; i++)
+    {
+        input = inputs[i]
+        layer = layerControl._getLayer(input.layerId).layer
+        if (!layerControl._map.hasLayer(layer)) {
+            layerControl._map.addLayer(layer)
+        }
+        input.checked = true
+    }
+})
+
+var disableBtn = document.createElement('button')
+disableBtn.className = "layer-btn"
+disableBtn.appendChild(document.createTextNode("Disable All"))
+disableBtn.addEventListener("click", _ => {
+    inputs = layerControl._layerControlInputs
+    for (i = 0; i < inputs.length; i++)
+    {
+        input = inputs[i]
+        layer = layerControl._getLayer(input.layerId).layer
+        if (layerControl._map.hasLayer(layer)) {
+            layerControl._map.removeLayer(layer)
+        }
+        input.checked = false
+    }
+})
+
+btnContainer.appendChild(enableBtn)
+btnContainer.appendChild(disableBtn)
+layersList.prepend(btnContainer)
 
 
