@@ -3,3 +3,15 @@ width:100%;
 display: flex;
 justify-content: center;
 }
+
+.link {
+    text-decoration: none;
+    color: #17b33e;
+    
+}
+
+.link:hover {
+    text-decoration: none;
+    color: green;
+    transition: all ease 2s;
+}

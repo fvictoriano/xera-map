@@ -10,9 +10,11 @@ var map = L.map('mapid', {
     zoomSnap: 0.1,
 });
 
-// map.on('click',function(e) {
-//     alert(e.latlng);
-// });
+
+/*map.on('click',function(e) {
+    alert(e.latlng);
+});*/
+
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
@@ -28,6 +30,7 @@ var gas = L.layerGroup().addTo(map);
 var compounds = L.layerGroup().addTo(map);
 var helis = L.layerGroup().addTo(map);
 var bunkers = L.layerGroup().addTo(map);
+var towers = L.layerGroup().addTo(map);
 
 var overlays = {
     "Cities": cities,
@@ -40,6 +43,7 @@ var overlays = {
     "Reactor Events": reactors,
     "Helicopter Crashes": helis,
     "Bunker Events": bunkers,
+    "Towers": towers,
 }
 
 //icons
@@ -79,29 +83,33 @@ var bunkerIcon = L.icon({
     iconSize: [20, 20], 
 });
 
+var towerIcon = L.icon({
+    iconUrl: 'img/icons/tower.png',
+    iconSize: [20, 20],
+});
+
 
 //markers
-L.marker([578, 321], {icon: atvIcon}).addTo(atv)
-L.marker([973, 374], {icon: atvIcon}).addTo(atv)
-L.marker([1568, 234], {icon: atvIcon}).addTo(atv)
-L.marker([1287, 820], {icon: atvIcon}).addTo(atv)
-L.marker([1215, 1159], {icon: atvIcon}).addTo(atv)
-L.marker([1271, 1440], {icon: atvIcon}).addTo(atv)
-L.marker([445, 846], {icon: atvIcon}).addTo(atv)
-L.marker([788, 1347], {icon: atvIcon}).addTo(atv)
-L.marker([1430, 1439], {icon: atvIcon}).addTo(atv)
-L.marker([749, 1316], {icon: atvIcon}).addTo(atv)
-L.marker([1010, 446], {icon: atvIcon}).addTo(atv)
+L.marker([578, 321], {icon: atvIcon}).addTo(atv);
+L.marker([983, 382], {icon: atvIcon}).addTo(atv);//bakersfield left (confirmed)
+L.marker([1568, 234], {icon: atvIcon}).addTo(atv);
+L.marker([1287, 820], {icon: atvIcon}).addTo(atv);// near hedgewood (confirmed)
+L.marker([1215, 1159], {icon: atvIcon}).addTo(atv);//winchester north (confirmed)
+L.marker([1271, 1440], {icon: atvIcon}).addTo(atv);
+L.marker([788, 1347], {icon: atvIcon}).addTo(atv);
+L.marker([749, 1316], {icon: atvIcon}).addTo(atv);// arrow town left (confirmed)
+L.marker([1010, 446], {icon: atvIcon}).addTo(atv);
+L.marker([958, 1012], {icon: atvIcon}).addTo(atv);//center winchester (confirmed)
 
-L.marker([435, 846], {icon: carIcon}).addTo(cars)
-L.marker([767, 1377], {icon: carIcon}).addTo(cars)
-L.marker([1008, 1049], {icon: carIcon}).addTo(cars)
-L.marker([1050, 1214], {icon: carIcon}).addTo(cars)
-L.marker([1157, 931], {icon: carIcon}).addTo(cars)
-L.marker([1389, 1424], {icon: carIcon}).addTo(cars)
-L.marker([1338, 1446], {icon: carIcon}).addTo(cars)
-L.marker([965, 1003], {icon: carIcon}).addTo(cars)
-L.marker([453, 967], {icon: carIcon}).addTo(cars)
+L.marker([435, 846], {icon: carIcon}).addTo(cars);//melrose left (confirmed)
+L.marker([767, 1377], {icon: carIcon}).addTo(cars);//arrow town right (confirmed)
+L.marker([1013, 1035], {icon: carIcon}).addTo(cars);//center top winchester (confirmed)
+L.marker([1063, 1213], {icon: carIcon}).addTo(cars);//right winchester (confirmed)
+L.marker([1157, 931], {icon: carIcon}).addTo(cars);//top winchester (confirmed)
+//L.marker([1389, 1424], {icon: carIcon}).addTo(cars); not confirmed
+L.marker([1338, 1446], {icon: carIcon}).addTo(cars);//gas station on moutain view (confirmed)
+L.marker([453, 967], {icon: carIcon}).addTo(cars);
+L.marker([1421, 1439], {icon: carIcon}).addTo(cars);//moutain view north (confirmed)
 
 L.marker([912, 1480], {icon: gasIcon}).addTo(gas);
 L.marker([1432, 1130], {icon: gasIcon}).addTo(gas);
@@ -136,83 +144,55 @@ L.marker([597, 534], {icon: bunkerIcon}).addTo(bunkers);
 L.marker([1816, 1372], {icon: bunkerIcon}).addTo(bunkers);
 L.marker([1254, 133], {icon: bunkerIcon}).addTo(bunkers);
 
+L.marker([1652, 795], {icon: towerIcon}).addTo(towers);
+L.marker([1420, 1747], {icon: towerIcon}).addTo(towers);
+L.marker([984, 1436], {icon: towerIcon}).addTo(towers);
+L.marker([816, 1023], {icon: towerIcon}).addTo(towers);
+L.marker([1335, 1260], {icon: towerIcon}).addTo(towers);
+L.marker([1418, 596], {icon: towerIcon}).addTo(towers);
+L.marker([845, 1689], {icon: towerIcon}).addTo(towers);
+L.marker([649, 718], {icon: towerIcon}).addTo(towers);
+L.marker([368, 833], {icon: towerIcon}).addTo(towers);
+L.marker([627, 1684], {icon: towerIcon}).addTo(towers);
+L.marker([1398, 954], {icon: towerIcon}).addTo(towers);
+L.marker([1724, 205], {icon: towerIcon}).addTo(towers);
+L.marker([368, 833], {icon: towerIcon}).addTo(towers);
+
+
+
+
+
 
 // AREA NAMES
 
-L.marker(
-    [1002, 1780], 
-    {icon: L.icon({ iconUrl: 'img/settlements/esettlement.png', iconSize: [115, 16] })}
-).addTo(settlements)
+function createNametag(name, pos, classname, offset, layer)
+{
+    L.marker(pos, { opacity: 0})
+        .bindTooltip(name, {
+            permanent: true,
+            className: classname,
+            offset: offset
+        })
+        .addTo(layer)
+}
 
-L.marker(
-    [1763, 502], 
-    {icon: L.icon({ iconUrl: 'img/settlements/nsettlement.png', iconSize: [120, 16] })}
-).addTo(settlements)
+createNametag("NORTH SETTLEMENT", [1763, 502], "nametag green", [-85, 30], settlements)
+createNametag("EAST SETTLEMENT", [1002, 1780], "nametag green", [-85, 30], settlements)
+createNametag("SOUTH SETTLEMENT", [178, 157], "nametag green", [-85, 30], settlements)
 
-L.marker(
-    [178, 157], 
-    {icon: L.icon({ iconUrl: 'img/settlements/ssettlement.png', iconSize: [120, 16] })}
-).addTo(settlements)
+createNametag("NORTH MILITARY BASE", [1756, 1412], "nametag red", [-100, 20], military)
+createNametag("WHITESTONE AIRFIELD", [522, 1834], "nametag red", [-100, 30], military)
+createNametag("PRISON", [132, 1045], "nametag red", [-50, 30], military)
 
-L.marker(
-    [520, 1828], 
-    {icon: L.icon({ iconUrl: 'img/military/airfield.png', iconSize: [130, 16] })}
-).addTo(military)
-
-L.marker(
-    [1756, 1412], 
-    {icon: L.icon({ iconUrl: 'img/military/milbase.png', iconSize: [130, 16] })}
-).addTo(military)
-
-L.marker(
-    [132, 1045], 
-    {icon: L.icon({ iconUrl: 'img/military/prison.png', iconSize: [50, 16] })}
-).addTo(military)
-
-L.marker(
-    [1046, 1051], 
-    {icon: L.icon({ iconUrl: 'img/cities/winchester.png', iconSize: [110, 16] })}
-).addTo(cities)
-
-L.marker(
-    [752, 1345], 
-    {icon: L.icon({ iconUrl: 'img/cities/arrowtown.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [975, 428], 
-    {icon: L.icon({ iconUrl: 'img/cities/bakersfield.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1458, 712], 
-    {icon: L.icon({ iconUrl: 'img/cities/hedgewood.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1562, 200], 
-    {icon: L.icon({ iconUrl: 'img/cities/henderson.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [492, 922], 
-    {icon: L.icon({ iconUrl: 'img/cities/melrose.png', iconSize: [67, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1367, 1510], 
-    {icon: L.icon({ iconUrl: 'img/cities/mountainview.png', iconSize: [100, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1150, 75], 
-    {icon: L.icon({ iconUrl: 'img/cities/port.png', iconSize: [35, 16] })}
-).addTo(cities)
-
-L.marker(
-    [521, 1145], 
-    {icon: L.icon({ iconUrl: 'img/cities/southernlakes.png', iconSize: [105, 16] })}
-).addTo(cities)
+createNametag("WINCHESTER CITY", [1046, 1051], "nametag grey", [-80, 30], cities)
+createNametag("ARROW TOWN", [752, 1345], "nametag grey", [-70, 30], cities)
+createNametag("BAKERSFIELD", [975, 428], "nametag grey", [-70, 25], cities)
+createNametag("HEDGEWOOD", [1458, 712], "nametag grey", [-65, 30], cities)
+createNametag("HENDERSON", [1562, 200], "nametag grey", [-60, 25], cities)
+createNametag("MELROSE", [492, 922], "nametag grey", [-50, 30], cities)
+createNametag("MOUNTAIN VIEW", [1367, 1510], "nametag grey", [-80, 25], cities)
+createNametag("PORT", [1150, 75], "nametag grey", [-45, 25], cities)
+createNametag("SOUTHERN LAKES", [521, 1145], "nametag grey", [-80, 25], cities)
 
 //control map
 L.control.layers(null, overlays).addTo(map);

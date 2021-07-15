@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 #mapid { 
     height: 97vh;
     width: 100vw;
@@ -8,10 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-
 }
-
-
 
 body {
     background-color: black;
@@ -20,11 +19,41 @@ body {
     
 }
 
-.t1 {
-    font-size: 10px;
-    color: white;
+.link {
+    text-decoration: none;
+    color: #17b33e;
+    
 }
 
-.borda {
-    border: 1px solid red;
+.link:hover {
+    text-decoration: none;
+    color: green;
+    transition: all ease 2s;
 }
+
+.nametag {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    /* border-radius: 7px; */
+    letter-spacing: 1px;
+    /* box-shadow: 1px 1px 15px 2px rgba(255, 0, 0, 0.8); */
+    
+}
+
+.leaflet-tooltip-left.nametag::before {
+    border-left-color: rgba(255, 255, 255, 0);
+}
+
+.leaflet-tooltip-right.nametag::before {
+  border-right-color: rgba(255, 255, 255, 0);
+}
+
+.red {background-color: rgb(155, 4, 4, 0.8);}
+
+.green {background-color: rgba(0, 255, 55, 0.6);}
+
+.grey {background-color: rgba(48, 48, 48, 0.8);}
