@@ -139,22 +139,84 @@ L.marker([1254, 133], {icon: bunkerIcon}).addTo(bunkers);
 
 // AREA NAMES
 
-L.marker(
+
+//east
+
+var east = new L.marker([1002, 1780], { opacity: 0 }); //opacity may be set to zero
+east.bindTooltip("EAST SETTLEMENT", {
+    permanent: true,
+    className: "settlement",
+    offset: [-85, 30],   
+});
+east.addTo(settlements);
+
+var north = new L.marker([1763, 502], { opacity: 0 }); //opacity may be set to zero
+north.bindTooltip("NORTH SETTLEMENT", {
+    permanent: true,
+    className: "settlement",
+    offset: [-85, 30],   
+});
+north.addTo(settlements);
+
+var south = new L.marker([178, 157], { opacity: 0 }); //opacity may be set to zero
+south.bindTooltip("SOUTH SETTLEMENT", {
+    permanent: true,
+    className: "settlement",
+    offset: [-85, 30],   
+});
+south.addTo(settlements);
+
+// red zone
+
+var airfield = new L.marker([522.454947, 1834], { opacity: 0 }); //opacity may be set to zero
+airfield.bindTooltip("AIRFIELD", {
+    permanent: true,
+    className: "redzones",
+    offset: [-50, 30],   
+});
+airfield.addTo(military);
+
+var militarybase = new L.marker([1756, 1412], { opacity: 0 }); //opacity may be set to zero
+militarybase.bindTooltip("MILITARY BASE", {
+    permanent: true,
+    className: "redzones",
+    offset: [-50, 30],   
+});
+militarybase.addTo(military);
+
+var prison = new L.marker([132, 1045], { opacity: 0 }); //opacity may be set to zero
+prison.bindTooltip("PRISON", {
+    permanent: true,
+    className: "redzones",
+    offset: [-50, 30],   
+});
+prison.addTo(military);
+
+
+//old settlement
+
+/*L.marker(
     [1002, 1780], 
     {icon: L.icon({ iconUrl: 'img/settlements/esettlement.png', iconSize: [115, 16] })}
 ).addTo(settlements)
+
+//north
 
 L.marker(
     [1763, 502], 
     {icon: L.icon({ iconUrl: 'img/settlements/nsettlement.png', iconSize: [120, 16] })}
 ).addTo(settlements)
 
+//south
+
 L.marker(
     [178, 157], 
     {icon: L.icon({ iconUrl: 'img/settlements/ssettlement.png', iconSize: [120, 16] })}
-).addTo(settlements)
+).addTo(settlements)*/
 
-L.marker(
+//old military
+
+/*L.marker(
     [520, 1828], 
     {icon: L.icon({ iconUrl: 'img/military/airfield.png', iconSize: [130, 16] })}
 ).addTo(military)
@@ -167,7 +229,7 @@ L.marker(
 L.marker(
     [132, 1045], 
     {icon: L.icon({ iconUrl: 'img/military/prison.png', iconSize: [50, 16] })}
-).addTo(military)
+).addTo(military)*/
 
 L.marker(
     [1046, 1051], 
