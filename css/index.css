@@ -31,42 +31,29 @@ body {
     transition: all ease 2s;
 }
 
-/* css titles */
-
-.settlement { 
-    background: rgba(23, 179, 62, 0.4);
-    padding: 3px;
+.nametag {
+    font-size: 0.7rem;
+    padding: 1px 4px;
     color: white;
     border: none;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    border-radius: 7px;
+    /* border-radius: 7px; */
     letter-spacing: 1px;
-    box-shadow: 1px 1px 15px 2px rgba(30, 255, 1, 0.5);
-  }
-.leaflet-tooltip-left.settlement::before {
-    border-left-color: rgba(255, 255, 255, 0);
-  }
-.leaflet-tooltip-right.settlement::before {
-    border-right-color: rgba(255, 255, 255, 0);
-  }
-
-.redzones {
-    font-size: 0.7rem; 
-    background: red;
-    padding: 3px;
-    color: white;
-    border: none;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 7px;
-    letter-spacing: 1px;
-    box-shadow: 1px 1px 15px 2px rgba(255, 0, 0, 0.8);
+    /* box-shadow: 1px 1px 15px 2px rgba(255, 0, 0, 0.8); */
     
-  }
-.leaflet-tooltip-left.redzones::before {
+}
+
+.leaflet-tooltip-left.nametag::before {
     border-left-color: rgba(255, 255, 255, 0);
-  }
-  .leaflet-tooltip-right.redzones::before {
-    border-right-color: rgba(255, 255, 255, 0);
-  }  
+}
+
+.leaflet-tooltip-right.nametag::before {
+  border-right-color: rgba(255, 255, 255, 0);
+}
+
+.red {background-color: rgb(155, 4, 4);}
+
+.green {background-color: green;}
+
+.grey {background-color: rgb(48, 48, 48);}

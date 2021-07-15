@@ -163,142 +163,34 @@ L.marker([368, 833], {icon: towerIcon}).addTo(towers);
 
 // AREA NAMES
 
+function createNametag(name, pos, classname, offset, layer)
+{
+    L.marker(pos, { opacity: 0})
+        .bindTooltip(name, {
+            permanent: true,
+            className: classname,
+            offset: offset
+        })
+        .addTo(layer)
+}
 
-//east
+createNametag("NORTH SETTLEMENT", [1763, 502], "nametag green", [-85, 30], settlements)
+createNametag("EAST SETTLEMENT", [1002, 1780], "nametag green", [-85, 30], settlements)
+createNametag("SOUTH SETTLEMENT", [178, 157], "nametag green", [-85, 30], settlements)
 
-var east = new L.marker([1002, 1780], { opacity: 0 }); //opacity may be set to zero
-east.bindTooltip("EAST SETTLEMENT", {
-    permanent: true,
-    className: "settlement",
-    offset: [-85, 30],   
-});
-east.addTo(settlements);
+createNametag("NORTH MILITARY BASE", [1756, 1412], "nametag red", [-100, 20], military)
+createNametag("WHITESTONE AIRFIELD", [522, 1834], "nametag red", [-100, 30], military)
+createNametag("PRISON", [132, 1045], "nametag red", [-50, 30], military)
 
-var north = new L.marker([1763, 502], { opacity: 0 }); //opacity may be set to zero
-north.bindTooltip("NORTH SETTLEMENT", {
-    permanent: true,
-    className: "settlement",
-    offset: [-85, 30],   
-});
-north.addTo(settlements);
-
-var south = new L.marker([178, 157], { opacity: 0 }); //opacity may be set to zero
-south.bindTooltip("SOUTH SETTLEMENT", {
-    permanent: true,
-    className: "settlement",
-    offset: [-85, 30],   
-});
-south.addTo(settlements);
-
-// red zone
-
-var airfield = new L.marker([522.454947, 1834], { opacity: 0 }); //opacity may be set to zero
-airfield.bindTooltip("WHITESTONE AIRFIELD", {
-    permanent: true,
-    className: "redzones",
-    offset: [-100, 30],   
-});
-airfield.addTo(military);
-
-var militarybase = new L.marker([1756, 1412], { opacity: 0 }); //opacity may be set to zero
-militarybase.bindTooltip("NORTH MILITARY BASE", {
-    permanent: true,
-    className: "redzones",
-    offset: [-100, 30],   
-});
-militarybase.addTo(military);
-
-var prison = new L.marker([132, 1045], { opacity: 0 }); //opacity may be set to zero
-prison.bindTooltip("PRISON", {
-    permanent: true,
-    className: "redzones",
-    offset: [-50, 30],   
-});
-prison.addTo(military);
-
-
-//old settlement
-
-/*L.marker(
-    [1002, 1780], 
-    {icon: L.icon({ iconUrl: 'img/settlements/esettlement.png', iconSize: [115, 16] })}
-).addTo(settlements)
-
-//north
-
-L.marker(
-    [1763, 502], 
-    {icon: L.icon({ iconUrl: 'img/settlements/nsettlement.png', iconSize: [120, 16] })}
-).addTo(settlements)
-
-//south
-
-L.marker(
-    [178, 157], 
-    {icon: L.icon({ iconUrl: 'img/settlements/ssettlement.png', iconSize: [120, 16] })}
-).addTo(settlements)*/
-
-//old military
-
-/*L.marker(
-    [520, 1828], 
-    {icon: L.icon({ iconUrl: 'img/military/airfield.png', iconSize: [130, 16] })}
-).addTo(military)
-
-L.marker(
-    [1756, 1412], 
-    {icon: L.icon({ iconUrl: 'img/military/milbase.png', iconSize: [130, 16] })}
-).addTo(military)
-
-L.marker(
-    [132, 1045], 
-    {icon: L.icon({ iconUrl: 'img/military/prison.png', iconSize: [50, 16] })}
-).addTo(military)*/
-
-L.marker(
-    [1046, 1051], 
-    {icon: L.icon({ iconUrl: 'img/cities/winchester.png', iconSize: [110, 16] })}
-).addTo(cities)
-
-L.marker(
-    [752, 1345], 
-    {icon: L.icon({ iconUrl: 'img/cities/arrowtown.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [975, 428], 
-    {icon: L.icon({ iconUrl: 'img/cities/bakersfield.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1458, 712], 
-    {icon: L.icon({ iconUrl: 'img/cities/hedgewood.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1562, 200], 
-    {icon: L.icon({ iconUrl: 'img/cities/henderson.png', iconSize: [80, 16] })}
-).addTo(cities)
-
-L.marker(
-    [492, 922], 
-    {icon: L.icon({ iconUrl: 'img/cities/melrose.png', iconSize: [67, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1367, 1510], 
-    {icon: L.icon({ iconUrl: 'img/cities/mountainview.png', iconSize: [100, 16] })}
-).addTo(cities)
-
-L.marker(
-    [1150, 75], 
-    {icon: L.icon({ iconUrl: 'img/cities/port.png', iconSize: [35, 16] })}
-).addTo(cities)
-
-L.marker(
-    [521, 1145], 
-    {icon: L.icon({ iconUrl: 'img/cities/southernlakes.png', iconSize: [105, 16] })}
-).addTo(cities)
+createNametag("WINCHESTER CITY", [1046, 1051], "nametag grey", [-80, 30], cities)
+createNametag("ARROW TOWN", [752, 1345], "nametag grey", [-70, 30], cities)
+createNametag("BAKERSFIELD", [975, 428], "nametag grey", [-70, 25], cities)
+createNametag("HEDGEWOOD", [1458, 712], "nametag grey", [-65, 30], cities)
+createNametag("HENDERSON", [1562, 200], "nametag grey", [-60, 25], cities)
+createNametag("MELROSE", [492, 922], "nametag grey", [-50, 30], cities)
+createNametag("MOUNTAIN VIEW", [1367, 1510], "nametag grey", [-80, 25], cities)
+createNametag("PORT", [1150, 75], "nametag grey", [-45, 25], cities)
+createNametag("SOUTHERN LAKES", [521, 1145], "nametag grey", [-80, 25], cities)
 
 //control map
 L.control.layers(null, overlays).addTo(map);
