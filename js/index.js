@@ -163,12 +163,6 @@ L.marker([209, 1497], {icon: towerIcon}).addTo(towers);
 L.marker([1156, 1396], {icon: towerIcon}).addTo(towers);
 
 
-
-
-
-
-
-
 // AREA NAMES
 
 function createNametag(name, pos, classname, offset, layer)
