@@ -34,7 +34,7 @@ body {
 /* css titles */
 
 .settlement { 
-    background: #17b33e;
+    background: rgba(23, 179, 62, 0.4);
     padding: 3px;
     color: white;
     border: none;
