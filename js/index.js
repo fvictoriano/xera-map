@@ -169,18 +169,18 @@ south.addTo(settlements);
 // red zone
 
 var airfield = new L.marker([522.454947, 1834], { opacity: 0 }); //opacity may be set to zero
-airfield.bindTooltip("AIRFIELD", {
+airfield.bindTooltip("WHITESTONE AIRFIELD", {
     permanent: true,
     className: "redzones",
-    offset: [-50, 30],   
+    offset: [-100, 30],   
 });
 airfield.addTo(military);
 
 var militarybase = new L.marker([1756, 1412], { opacity: 0 }); //opacity may be set to zero
-militarybase.bindTooltip("MILITARY BASE", {
+militarybase.bindTooltip("NORTH MILITARY BASE", {
     permanent: true,
     className: "redzones",
-    offset: [-50, 30],   
+    offset: [-100, 30],   
 });
 militarybase.addTo(military);
 

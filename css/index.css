@@ -51,7 +51,8 @@ body {
     border-right-color: rgba(255, 255, 255, 0);
   }
 
-.redzones { 
+.redzones {
+    font-size: 0.7rem; 
     background: red;
     padding: 3px;
     color: white;
