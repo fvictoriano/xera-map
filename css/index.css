@@ -52,8 +52,8 @@ body {
   border-right-color: rgba(255, 255, 255, 0);
 }
 
-.red {background-color: rgb(155, 4, 4);}
+.red {background-color: rgb(155, 4, 4, 0.8);}
 
-.green {background-color: green;}
+.green {background-color: rgba(0, 255, 55, 0.6);}
 
-.grey {background-color: rgb(48, 48, 48);}
+.grey {background-color: rgba(48, 48, 48, 0.8);}
