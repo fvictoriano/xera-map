@@ -10,9 +10,9 @@ var map = L.map('mapid', {
     zoomSnap: 0.1,
 });
 
-/*map.on('click',function(e) {
+map.on('click',function(e) {
     alert(e.latlng);
-});*/
+});
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
 map.fitBounds(bounds)
@@ -155,6 +155,14 @@ L.marker([627, 1684], {icon: towerIcon}).addTo(towers);
 L.marker([1398, 954], {icon: towerIcon}).addTo(towers);
 L.marker([1724, 205], {icon: towerIcon}).addTo(towers);
 L.marker([368, 833], {icon: towerIcon}).addTo(towers);
+L.marker([986, 582], {icon: towerIcon}).addTo(towers);
+L.marker([837, 724], {icon: towerIcon}).addTo(towers);
+L.marker([521, 517], {icon: towerIcon}).addTo(towers);
+L.marker([147, 1186], {icon: towerIcon}).addTo(towers);
+L.marker([209, 1497], {icon: towerIcon}).addTo(towers);
+L.marker([1156, 1396], {icon: towerIcon}).addTo(towers);
+
+
 
 
 
