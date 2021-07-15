@@ -155,7 +155,7 @@ L.marker([627, 1684], {icon: towerIcon}).addTo(towers);
 L.marker([1398, 954], {icon: towerIcon}).addTo(towers);
 L.marker([1724, 205], {icon: towerIcon}).addTo(towers);
 L.marker([368, 833], {icon: towerIcon}).addTo(towers);
-L.marker([368, 833], {icon: towerIcon}).addTo(towers);
+
 
 
 
