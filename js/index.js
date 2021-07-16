@@ -11,9 +11,9 @@ var map = L.map('mapid', {
 });
 
 
- map.on('click',function(e) {
-     alert(e.latlng);
- });
+// map.on('click',function(e) {
+//     alert(e.latlng);
+// });
 
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
