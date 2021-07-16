@@ -11,9 +11,9 @@ var map = L.map('mapid', {
 });
 
 
-// map.on('click',function(e) {
-//     alert(e.latlng);
-// });
+ map.on('click',function(e) {
+     alert(e.latlng);
+ });
 
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
@@ -110,6 +110,7 @@ L.marker([1157, 931], {icon: carIcon}).addTo(cars);//top winchester (confirmed)
 L.marker([1338, 1446], {icon: carIcon}).addTo(cars);//gas station on moutain view (confirmed)
 L.marker([453, 967], {icon: carIcon}).addTo(cars);
 L.marker([1421, 1439], {icon: carIcon}).addTo(cars);//moutain view north (confirmed)
+L.marker([1013, 355], {icon: carIcon}).addTo(cars);//bakers field left 
 
 L.marker([912, 1480], {icon: gasIcon}).addTo(gas);
 L.marker([1432, 1130], {icon: gasIcon}).addTo(gas);
