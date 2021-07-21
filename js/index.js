@@ -11,9 +11,9 @@ var map = L.map('mapid', {
 });
 
 
-// map.on('click',function(e) {
-//     alert(e.latlng);
-// });
+/*map.on('click',function(e) {
+    alert(e.latlng);
+});*/
 
 
 var image = L.imageOverlay('img/map.png', bounds).addTo(map);
@@ -31,6 +31,7 @@ var compounds = L.layerGroup().addTo(map);
 var helis = L.layerGroup().addTo(map);
 var bunkers = L.layerGroup().addTo(map);
 var towers = L.layerGroup().addTo(map);
+var militaryloot = L.layerGroup().addTo(map);
 
 var overlays = {
     "Cities": cities,
@@ -44,6 +45,7 @@ var overlays = {
     "Helicopter Crashes": helis,
     "Bunker Events": bunkers,
     "Towers": towers,
+    "Military Loot": militaryloot,
 }
 
 //icons
@@ -85,6 +87,11 @@ var bunkerIcon = L.icon({
 
 var towerIcon = L.icon({
     iconUrl: 'img/icons/tower.png',
+    iconSize: [20, 20],
+});
+
+var boxmilitaryIcon = L.icon({
+    iconUrl: 'img/icons/box.png',
     iconSize: [20, 20],
 });
 
@@ -164,6 +171,39 @@ L.marker([521, 517], {icon: towerIcon}).addTo(towers);
 L.marker([147, 1186], {icon: towerIcon}).addTo(towers);
 L.marker([209, 1497], {icon: towerIcon}).addTo(towers);
 L.marker([1156, 1396], {icon: towerIcon}).addTo(towers);
+L.marker([1421, 334], {icon: towerIcon}).addTo(towers);
+
+L.marker([908, 968], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1051, 1214], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1152, 935], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([749, 1321], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1288, 820], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([507, 961], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([722, 929], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([764, 663], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([558, 741], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([405, 1004], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1171, 396], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1318, 255], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1094, 1288], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([780, 1347], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([750, 1365], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([547, 885], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([469, 944], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1509, 1147], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1412, 1439], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1381, 1457], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([948, 446], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1005, 446], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1543, 170], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1500, 211], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1445, 763], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1402, 713], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1454, 680], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([1446, 465], {icon: boxmilitaryIcon}).addTo(militaryloot);
+L.marker([982, 378], {icon: boxmilitaryIcon}).addTo(militaryloot);
+
+
 
 
 // AREA NAMES
