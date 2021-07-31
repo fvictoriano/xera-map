@@ -115,6 +115,7 @@ L.marker([1157, 931], {icon: carIcon}).addTo(cars);//top winchester (confirmed)
 L.marker([1338, 1446], {icon: carIcon}).addTo(cars);//gas station on moutain view (confirmed)
 L.marker([453, 967], {icon: carIcon}).addTo(cars);
 L.marker([1421, 1439], {icon: carIcon}).addTo(cars);//moutain view north (confirmed)
+L.marker([1613, 210], {icon: carIcon}).addTo(cars);//henderson north (confirmed)
 
 L.marker([912, 1480], {icon: gasIcon}).addTo(gas);
 L.marker([1432, 1130], {icon: gasIcon}).addTo(gas);
@@ -144,6 +145,7 @@ L.marker([1656, 1033], {icon: fistIcon}).addTo(compounds);
 L.marker([1439, 1020], {icon: heliIcon}).addTo(helis);
 L.marker([257, 998], {icon: heliIcon}).addTo(helis);
 L.marker([472, 1722], {icon: heliIcon}).addTo(helis);
+L.marker([1065, 1093], {icon: heliIcon}).addTo(helis);
 
 L.marker([597, 534], {icon: bunkerIcon}).addTo(bunkers);
 L.marker([1816, 1372], {icon: bunkerIcon}).addTo(bunkers);
@@ -193,7 +195,6 @@ L.marker([1381, 1457], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([948, 446], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([1005, 446], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([1543, 170], {icon: boxmilitaryIcon}).addTo(militaryloot);
-L.marker([1500, 211], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([1445, 763], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([1402, 713], {icon: boxmilitaryIcon}).addTo(militaryloot);
 L.marker([1454, 680], {icon: boxmilitaryIcon}).addTo(militaryloot);
